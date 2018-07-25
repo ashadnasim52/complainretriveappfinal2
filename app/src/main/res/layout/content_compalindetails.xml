@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".compalindetails"
+    tools:showIn="@layout/app_bar_compalindetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/compalintitletxt"
+            android:layout_width="match_parent"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/compalintxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/compalinidtxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="25sp"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/compalinextratxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/datetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/emailtxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+
+            android:text="TextView" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

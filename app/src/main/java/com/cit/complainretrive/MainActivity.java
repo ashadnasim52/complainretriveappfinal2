@@ -1,10 +1,12 @@
 package com.cit.complainretrive;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,14 +18,37 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,adapterofitem.Onitemclicklistner {
 
 
     adapterofitem adapterofitemyo;
+    ArrayList<String> extraarray;
     ArrayList<String> titlearray;
+    ArrayList<String> complainarray;
+    ArrayList<String> namearray;
+    ArrayList<String> emailarray;
     RecyclerView recyclerView;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
+    DatabaseReference user=myRef.child("Users");
+
+    public static final String extracomplain=null;
+    public static final String extratitle=null;
+    public static final String extraemail=null;
+    public static final String extraextyra=null;
+    public static final String extraname=null;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,43 +72,104 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        extraarray = new ArrayList<>();
+        complainarray=new ArrayList<>();
+        emailarray=new ArrayList<>();
+        namearray=new ArrayList<>();
         titlearray=new ArrayList<>();
         recyclerView=findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        titlearray.add("ashad");
-        titlearray.add("nasim");
-        titlearray.add("is");
-        titlearray.add("bass");
-        titlearray.add("bro");
-        titlearray.add("boy");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
+
         adapterofitemyo=new adapterofitem(titlearray,getApplicationContext());
         adapterofitemyo.setonitemclicklistner(this);
 
         recyclerView.setAdapter(adapterofitemyo);
+        ChildEventListener childEventListener=new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+//                animalNames.add(dataSnapshot.toString());
+                Log.i("datasnapshot","is"+dataSnapshot);
+
+                Log.i("datasnapshotatonepsio","is "+dataSnapshot);
+
+
+
+                Itemclass itemclass=dataSnapshot.getValue(Itemclass.class);
+                String extra=itemclass.getextra();
+                String name=itemclass.getName();
+                String complaian=itemclass.getcomplain();
+                String title=itemclass.getTitle();
+                String email=itemclass.getEmail();
+
+
+                extraarray.add(extra);
+                complainarray.add(complaian);
+                emailarray.add(email);
+                namearray.add(name);
+                titlearray.add(title);
+                Log.i("gantaitemsttles"," Are title "+titlearray);
+                Log.i("gantaitemsttles"," Are extra"+extraarray);
+                Log.i("gantaitemsttles"," Are complan "+complainarray);
+                Log.i("gantaitemsttles"," Are emal"+emailarray);
+                Log.i("gantaitemsttles"," Are name"+namearray);
+
+
+
+//                    arraylistofitem.add(itemclass);
+
+
+//                    String altro = ds.child("Name").getValue(String.class);
+//                    String asd=ds.getChildren().toString();
+//
+//                    Log.i("childrenis","is"+asd);
+//                    String as= ds.getKey();
+//                    Log.i("dsskeyis","is"+as);
+//                    Boolean a=ds.hasChild("LIBg7gn1S0126t1ONnJ");
+//                    Log.i("haikinahi"," is" +a);
+//
+//                    HashMap<String ,String > uid= new HashMap<>();
+//                    uid.put("Uid",altro);
+//                    Log.i("dataofuid","is of"+uid);
+//                    String cognome = ds.child("value").getValue(String.class);
+//                    String informazioni = ds.child("Informazioni").getValue(String.class);
+//                    String nome = ds.child("Nome").getValue(String.class);
+//                    animalNames.add(altro);
+//                    animalNames.add(cognome);
+//                    animalNames.add(informazioni);
+//                    Log.d("TAG", altro + " / " + cognome + " / " + informazioni + " / " + nome);
+
+                //
+
+                adapterofitemyo.notifyDataSetChanged();
+
+
+            }
+
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+        user.addChildEventListener(childEventListener);
+
+
     }
 
     @Override
@@ -146,5 +232,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onitemclick(int position) {
         Toast.makeText(getApplicationContext(),"bro goodjob"+position+"\n"+titlearray.get(position),Toast.LENGTH_SHORT).show();
+
+        Intent i=new Intent(getApplicationContext(),compalindetails.class);
+        //  itemcalss clickeditem=itemcalsses.get(position);
+        //        i.putExtra(extra_url,clickeditem.getUrltocontent());
+        //startActivity(i);
+        i.putExtra(extracomplain,complainarray.get(position));
+        i.putExtra(extratitle,titlearray.get(position));
+        i.putExtra(extraemail,emailarray.get(position));
+        i.putExtra(extraextyra,extraarray.get(position));
+        i.putExtra(extraname,namearray.get(position));
+        startActivity(i);
     }
 }
