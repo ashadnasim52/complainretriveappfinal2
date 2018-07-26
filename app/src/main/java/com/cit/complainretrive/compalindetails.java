@@ -15,11 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import static com.cit.complainretrive.MainActivity.extracomplain;
-import static com.cit.complainretrive.MainActivity.extraemail;
-import static com.cit.complainretrive.MainActivity.extraextyra;
-import static com.cit.complainretrive.MainActivity.extraname;
-import static com.cit.complainretrive.MainActivity.extratitle;
 
 public class compalindetails extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -62,12 +57,12 @@ public class compalindetails extends AppCompatActivity implements NavigationView
         // Intent i = getIntent();
         //String webadress = i.getStringExtra(extra_url);
         Intent intent=getIntent();
-        complainname.setText(intent.getStringExtra(extraname));
-        complain.setText(intent.getStringExtra(extracomplain));
-        complaintitle.setText(intent.getStringExtra(extratitle));
+        complainname.setText(intent.getStringExtra("namearray"));
+        complain.setText(intent.getStringExtra("complainarray"));
+        complaintitle.setText(intent.getStringExtra("titlearray"));
 //        complaindate.setText(intent.getStringExtra());
-        complainemail.setText(intent.getStringExtra(extraemail));
-        complainextra.setText(intent.getStringExtra(extraextyra));
+        complainemail.setText(intent.getStringExtra("emailarray"));
+        complainextra.setText(intent.getStringExtra("extraarray"));
         //i.putExtra(extracomplain,complainarray.get(position));
         //        i.putExtra(extratitle,titlearray.get(position));
         //        i.putExtra(extraemail,emailarray.get(position));

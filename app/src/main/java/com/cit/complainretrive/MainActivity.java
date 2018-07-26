@@ -41,11 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DatabaseReference myRef = database.getReference();
     DatabaseReference user=myRef.child("Users");
 
-    public static final String extracomplain=null;
-    public static final String extratitle=null;
-    public static final String extraemail=null;
-    public static final String extraextyra=null;
-    public static final String extraname=null;
+
 
 
 
@@ -231,17 +227,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onitemclick(int position) {
-        Toast.makeText(getApplicationContext(),"bro goodjob"+position+"\n"+titlearray.get(position),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"bro goodjob"+position+"\n"+titlearray.get(position)+"\n"+complainarray.get(position)+extraarray.get(position),Toast.LENGTH_SHORT).show();
 
         Intent i=new Intent(getApplicationContext(),compalindetails.class);
         //  itemcalss clickeditem=itemcalsses.get(position);
         //        i.putExtra(extra_url,clickeditem.getUrltocontent());
         //startActivity(i);
-        i.putExtra(extracomplain,complainarray.get(position));
-        i.putExtra(extratitle,titlearray.get(position));
-        i.putExtra(extraemail,emailarray.get(position));
-        i.putExtra(extraextyra,extraarray.get(position));
-        i.putExtra(extraname,namearray.get(position));
+        Bundle bundle=new Bundle();
+
+        i.putExtra("complainarray",complainarray.get(position));
+        i.putExtra("titlearray",titlearray.get(position));
+        i.putExtra("emailarray",emailarray.get(position));
+        i.putExtra("extraarray",extraarray.get(position));
+        i.putExtra("namearray",namearray.get(position));
+
         startActivity(i);
     }
 }
