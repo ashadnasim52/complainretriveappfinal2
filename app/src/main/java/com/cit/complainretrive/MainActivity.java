@@ -145,6 +145,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onitemclick(int position) {
-        Toast.makeText(getApplicationContext(),"bro goodjob"+position+"\n"+titlearray.get(position),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"bro goodjob"+ (position +1 )+"\n"+titlearray.get(position),Toast.LENGTH_SHORT).show();
     }
 }
