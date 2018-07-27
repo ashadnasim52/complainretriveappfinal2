@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "905148841633",
+    "firebase_url": "https://college-complain-e4b33.firebaseio.com",
+    "project_id": "college-complain-e4b33",
+    "storage_bucket": "college-complain-e4b33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905148841633:android:41295296c80bb1fe",
+        "android_client_info": {
+          "package_name": "college.com.mycomplaincit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905148841633-q770a2gs8fi3qu8mk3676eho4u8l6krd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "college.com.mycomplaincit",
+            "certificate_hash": "7eace0de49617e95acb943828f7bfa6c7d0dd9c1"
+          }
+        },
+        {
+          "client_id": "905148841633-r8qsahshcp1n3lkv649p9iuv99jt777t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZbIUH2oRaTVTCprlUrBgit4GZN7XTN8U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905148841633-r8qsahshcp1n3lkv649p9iuv99jt777t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905148841633:android:0c66f8411789223b",
+        "android_client_info": {
+          "package_name": "com.cit.complainretrive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905148841633-gcb0eouka5mjjc4dmstt72lsls2rsg5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cit.complainretrive",
+            "certificate_hash": "7eace0de49617e95acb943828f7bfa6c7d0dd9c1"
+          }
+        },
+        {
+          "client_id": "905148841633-fokp26hr6re4fsr99dn3pdfihi74ela5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cit.complainretrive",
+            "certificate_hash": "f4f1e2824e5ce975115ea1bc03dd7ea160c1f6fa"
+          }
+        },
+        {
+          "client_id": "905148841633-r8qsahshcp1n3lkv649p9iuv99jt777t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZbIUH2oRaTVTCprlUrBgit4GZN7XTN8U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905148841633-r8qsahshcp1n3lkv649p9iuv99jt777t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
