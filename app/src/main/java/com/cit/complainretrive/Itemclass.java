@@ -1,11 +1,38 @@
 package com.cit.complainretrive;
 
 public class Itemclass {
+    private String id;
+    private String authid;
+    private String dateandtime;
     private  String extra;
     private String title;
     private  String complain;
     private  String name;
     private String email;
+
+    public String getIdhereofuser() {
+        return id;
+    }
+
+    public void setIdhereofuser(String idhereofuser) {
+        this.id = idhereofuser;
+    }
+
+    public String getAuthid() {
+        return authid;
+    }
+
+    public void setAuthid(String authid) {
+        this.authid = authid;
+    }
+
+    public String getDateandtime() {
+        return dateandtime;
+    }
+
+    public void setDateandtime(String dateandtime) {
+        this.dateandtime = dateandtime;
+    }
 
     public String getcomplain() {
         return complain;

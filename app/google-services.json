@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "905148841633-b5h6vhbg0igbpdalkupo140f41kg5fp9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "college.com.mycomplaincit",
+            "certificate_hash": "f4f1e2824e5ce975115ea1bc03dd7ea160c1f6fa"
+          }
+        },
+        {
           "client_id": "905148841633-r8qsahshcp1n3lkv649p9iuv99jt777t.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -64,6 +72,14 @@
           "android_info": {
             "package_name": "com.cit.complainretrive",
             "certificate_hash": "7eace0de49617e95acb943828f7bfa6c7d0dd9c1"
+          }
+        },
+        {
+          "client_id": "905148841633-fokp26hr6re4fsr99dn3pdfihi74ela5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cit.complainretrive",
+            "certificate_hash": "f4f1e2824e5ce975115ea1bc03dd7ea160c1f6fa"
           }
         },
         {
