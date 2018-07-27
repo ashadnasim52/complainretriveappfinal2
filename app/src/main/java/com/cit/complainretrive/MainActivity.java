@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,adapterofitem.Onitemclicklistner {
 
 
+    TextView toatalnumberofcomplin;
     adapterofitem adapterofitemyo;
     ArrayList<String> extraarray;
     ArrayList<String> titlearray;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
+    int ind=0;
 
 
     @Override
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dateandtime=new ArrayList<>();
         titlearray=new ArrayList<>();
         recyclerView=findViewById(R.id.recyclerview);
+        toatalnumberofcomplin=findViewById(R.id.totalnoofcompalin);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapterofitemyo=new adapterofitem(titlearray,getApplicationContext());
@@ -90,72 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-//                animalNames.add(dataSnapshot.toString());
-                Log.i("datasnapshot","is"+dataSnapshot);
-
-                Log.i("datasnapshotatonepsio","is "+dataSnapshot);
-
-
-
-                Itemclass itemclass=dataSnapshot.getValue(Itemclass.class);
-                String extra=itemclass.getextra();
-                String name=itemclass.getName();
-                String complaian=itemclass.getcomplain();
-                String title=itemclass.getTitle();
-                String email=itemclass.getEmail();
-                String iidofcompalin=itemclass.getIdhereofuser();
-                String authid=itemclass.getAuthid();
-                String daateandtime=itemclass.getDateandtime();
-                //TODO staart from here
-
-
-                idofcomplain.add(iidofcompalin);
-                authidofcomplainer.add(authid);
-                dateandtime.add(daateandtime);
-
-                extraarray.add(extra);
-                complainarray.add(complaian);
-                emailarray.add(email);
-                namearray.add(name);
-                titlearray.add(title);
-                Log.i("gantaitemsttles"," Are id "+idofcomplain);
-                Log.i("gantaitemsttles"," Are authid "+authidofcomplainer);
-                Log.i("gantaitemsttles"," Are dateandtime "+dateandtime);
-                Log.i("gantaitemsttles"," Are title "+titlearray);
-                Log.i("gantaitemsttles"," Are extra"+extraarray);
-                Log.i("gantaitemsttles"," Are complan "+complainarray);
-                Log.i("gantaitemsttles"," Are emal"+emailarray);
-                Log.i("gantaitemsttles"," Are name"+namearray);
-
-
-
-//                    arraylistofitem.add(itemclass);
-
-
-//                    String altro = ds.child("Name").getValue(String.class);
-//                    String asd=ds.getChildren().toString();
-//
-//                    Log.i("childrenis","is"+asd);
-//                    String as= ds.getKey();
-//                    Log.i("dsskeyis","is"+as);
-//                    Boolean a=ds.hasChild("LIBg7gn1S0126t1ONnJ");
-//                    Log.i("haikinahi"," is" +a);
-//
-//                    HashMap<String ,String > uid= new HashMap<>();
-//                    uid.put("Uid",altro);
-//                    Log.i("dataofuid","is of"+uid);
-//                    String cognome = ds.child("value").getValue(String.class);
-//                    String informazioni = ds.child("Informazioni").getValue(String.class);
-//                    String nome = ds.child("Nome").getValue(String.class);
-//                    animalNames.add(altro);
-//                    animalNames.add(cognome);
-//                    animalNames.add(informazioni);
-//                    Log.d("TAG", altro + " / " + cognome + " / " + informazioni + " / " + nome);
-
-                //
-
-                adapterofitemyo.notifyDataSetChanged();
-
+                startyourwork(dataSnapshot);
 
             }
 
@@ -163,21 +102,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
+                startyourwork(dataSnapshot);
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
+                startyourwork(dataSnapshot);
 
             }
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                startyourwork(dataSnapshot);
 
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+                Toast.makeText(getApplicationContext(),"Somethings Goes Wrong \nPlease try after sometimes",Toast.LENGTH_SHORT).show();
             }
         };
         user.addChildEventListener(childEventListener);
@@ -251,6 +194,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //        i.putExtra(extra_url,clickeditem.getUrltocontent());
         //startActivity(i);
 
+        Log.i("numbgeris","is"+ind);
 
         i.putExtra("complainarray",complainarray.get(position));
         i.putExtra("titlearray",titlearray.get(position));
@@ -262,5 +206,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         i.putExtra("dateandtime",dateandtime.get(position));
 
         startActivity(i);
+    }
+    public void startyourwork(DataSnapshot dataSnapshot)
+    {
+        Log.i("datasnapshot","is"+dataSnapshot);
+
+        Log.i("datasnapshotatonepsio","is "+dataSnapshot);
+
+
+
+        ind++;
+        toatalnumberofcomplin.setText("Total Number of Complains are :- "+ind);
+
+        Itemclass itemclass=dataSnapshot.getValue(Itemclass.class);
+        String extra=itemclass.getextra();
+        String name=itemclass.getName();
+        String complaian=itemclass.getcomplain();
+        String title=itemclass.getTitle();
+        String email=itemclass.getEmail();
+        String iidofcompalin=itemclass.getId();
+        Log.i("idofcomplain","is"+iidofcompalin);
+        String authid=itemclass.getAuthid();
+        String daateandtime=itemclass.getDateandtime();
+
+
+
+        idofcomplain.add(iidofcompalin);
+        authidofcomplainer.add(authid);
+        dateandtime.add(daateandtime);
+
+        extraarray.add(extra);
+        complainarray.add(complaian);
+        emailarray.add(email);
+        namearray.add(name);
+        titlearray.add(title);
+        Log.i("gantaitemsttles"," Are id "+idofcomplain);
+        Log.i("gantaitemsttles"," Are authid "+authidofcomplainer);
+        Log.i("gantaitemsttles"," Are dateandtime "+dateandtime);
+        Log.i("gantaitemsttles"," Are title "+titlearray);
+        Log.i("gantaitemsttles"," Are extra"+extraarray);
+        Log.i("gantaitemsttles"," Are complan "+complainarray);
+        Log.i("gantaitemsttles"," Are emal"+emailarray);
+        Log.i("gantaitemsttles"," Are name"+namearray);
+
+
+
+        adapterofitemyo.notifyDataSetChanged();
+
+
     }
 }

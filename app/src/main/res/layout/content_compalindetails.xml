@@ -8,71 +8,446 @@
     tools:context=".compalindetails"
     tools:showIn="@layout/app_bar_compalindetails">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/compalintitletxt"
+        <ScrollView
             android:layout_width="match_parent"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
+            android:layout_height="match_parent">
 
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/compalintxt"
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/complain_id"
+                            android:fontFamily="serif"
+                            android:textColor="@color/secondary_text"
+
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/idofcompaliner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif"
+                            android:textColor="@color/primary_text"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/user_id"
+                            android:fontFamily="serif"
+                            android:textColor="@color/secondary_text"
+
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/authid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_text"
+                            android:fontFamily="serif"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+                            android:textSize="18sp"
+
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/complain_title"
+                            android:fontFamily="serif"
+                            android:background="@color/accent"
+
+                            android:textColor="@color/secondary_text"
+
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/compalintitletxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_text"
+                            android:fontFamily="serif-monospace"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/complain"
+                            android:fontFamily="serif"
+                            android:textColor="@color/secondary_text"
+
+                            android:background="@color/accent"
+
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/compalintxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif-monospace"
+                            android:textColor="@color/primary_text"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+                            android:textSize="30sp"
+
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/complain_extra"
+                            android:fontFamily="serif"
+                            android:textColor="@color/secondary_text"
+
+                            android:background="@color/accent"
+
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/compalinextratxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif-monospace"
+                            android:textColor="@color/primary_text"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+                            android:textSize="29sp"
+
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date_of_complain"
+                            android:fontFamily="serif"
+
+                            android:textColor="@color/secondary_text"
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/datetxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_text"
+                            android:fontFamily="monospace"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+                            android:textSize="25sp"
+
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email_of_that_person"
+                            android:fontFamily="serif"
+                            android:textColor="@color/secondary_text"
+
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/emailtxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:textColor="@color/primary_text"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+                            android:textSize="19sp"
+
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name_of_complainer"
+                            android:fontFamily="serif"
+                            android:textColor="@color/secondary_text"
+
+                            android:textAlignment="center"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:id="@+id/compalinidnametxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="Something Wents Wrong Kindly contact the devloper"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+                            android:textColor="@color/primary_text"
+                            android:textSize="25sp"
+
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:layout_margin="8dp"
 
-            android:text="TextView" />
+            app:cardElevation="9dp"
+            app:cardCornerRadius="5dp"
+            >
 
-        <TextView
-            android:id="@+id/compalinidtxt"
+            <Button
+                android:id="@+id/setstatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/accent"
+                android:text="Set Status" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textSize="25sp"
+            android:layout_weight="1"
 
-            android:textStyle="bold" />
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            app:cardElevation="9dp"
+            app:cardCornerRadius="5dp"
+            >
 
-        <TextView
-            android:id="@+id/compalinextratxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
 
-        <TextView
-            android:id="@+id/datetxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
+            <Button
+                android:id="@+id/reportuser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/accent"
+                android:text="Report About User" />
+        </android.support.v7.widget.CardView>
 
-            android:text="TextView" />
 
-        <TextView
-            android:id="@+id/emailtxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
 
-            android:text="TextView" />
+
     </LinearLayout>
 
 

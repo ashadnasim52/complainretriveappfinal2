@@ -10,7 +10,7 @@ public class Itemclass {
     private  String name;
     private String email;
 
-    public String getIdhereofuser() {
+    public String getId() {
         return id;
     }
 

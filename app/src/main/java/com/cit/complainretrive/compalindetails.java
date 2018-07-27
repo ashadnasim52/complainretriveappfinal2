@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 public class compalindetails extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    TextView complain,complaintitle,complainextra,complainname,complainemail,complaindate;
+    TextView complain,complaintitle,complainextra,complainname,complainemail,complaindate,authid,idofcompaliner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +26,7 @@ public class compalindetails extends AppCompatActivity implements NavigationView
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -48,11 +42,13 @@ public class compalindetails extends AppCompatActivity implements NavigationView
 //            TextView complain,complaintitle,complainextra,
 // complainname,complainemail,complaindate;
         complain=findViewById(R.id.compalintxt);
+        idofcompaliner=findViewById(R.id.idofcompaliner);
+        authid=findViewById(R.id.authid);
         complaintitle=findViewById(R.id.compalintitletxt);
         complaindate=findViewById(R.id.datetxt);
         complainextra=findViewById(R.id.compalinextratxt);
         complainemail=findViewById(R.id.emailtxt);
-        complainname=findViewById(R.id.compalinidtxt);
+        complainname=findViewById(R.id.compalinidnametxt);
 
         // Intent i = getIntent();
         //String webadress = i.getStringExtra(extra_url);
@@ -61,8 +57,12 @@ public class compalindetails extends AppCompatActivity implements NavigationView
         complain.setText(intent.getStringExtra("complainarray"));
         complaintitle.setText(intent.getStringExtra("titlearray"));
 //        complaindate.setText(intent.getStringExtra());
+        complaindate.setText(intent.getStringExtra("dateandtime"));
+        authid.setText(intent.getStringExtra("authidofc"));
+        idofcompaliner.setText(intent.getStringExtra("idid"));
         complainemail.setText(intent.getStringExtra("emailarray"));
         complainextra.setText(intent.getStringExtra("extraarray"));
+
         //i.putExtra(extracomplain,complainarray.get(position));
         //        i.putExtra(extratitle,titlearray.get(position));
         //        i.putExtra(extraemail,emailarray.get(position));
