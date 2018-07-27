@@ -1,10 +1,9 @@
 package com.cit.complainretrive;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,20 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,adapterofitem.Onitemclicklistner {
+import android.widget.TextView;
 
 
-    adapterofitem adapterofitemyo;
-    ArrayList<String> titlearray;
-    RecyclerView recyclerView;
+public class compalindetails extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    TextView complain,complaintitle,complainextra,complainname,complainemail,complaindate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_compalindetails);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,43 +42,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        titlearray=new ArrayList<>();
-        recyclerView=findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        titlearray.add("ashad");
-        titlearray.add("nasim");
-        titlearray.add("is");
-        titlearray.add("bass");
-        titlearray.add("bro");
-        titlearray.add("boy");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        titlearray.add("ashad");
-        adapterofitemyo=new adapterofitem(titlearray,getApplicationContext());
-        adapterofitemyo.setonitemclicklistner(this);
 
-        recyclerView.setAdapter(adapterofitemyo);
+
+
+//            TextView complain,complaintitle,complainextra,
+// complainname,complainemail,complaindate;
+        complain=findViewById(R.id.compalintxt);
+        complaintitle=findViewById(R.id.compalintitletxt);
+        complaindate=findViewById(R.id.datetxt);
+        complainextra=findViewById(R.id.compalinextratxt);
+        complainemail=findViewById(R.id.emailtxt);
+        complainname=findViewById(R.id.compalinidtxt);
+
+        // Intent i = getIntent();
+        //String webadress = i.getStringExtra(extra_url);
+        Intent intent=getIntent();
+        complainname.setText(intent.getStringExtra("namearray"));
+        complain.setText(intent.getStringExtra("complainarray"));
+        complaintitle.setText(intent.getStringExtra("titlearray"));
+//        complaindate.setText(intent.getStringExtra());
+        complainemail.setText(intent.getStringExtra("emailarray"));
+        complainextra.setText(intent.getStringExtra("extraarray"));
+        //i.putExtra(extracomplain,complainarray.get(position));
+        //        i.putExtra(extratitle,titlearray.get(position));
+        //        i.putExtra(extraemail,emailarray.get(position));
+        //        i.putExtra(extraextyra,extraarray.get(position));
+        //        i.putExtra(extraname,namearray.get(position));
+
+
+
+
+
+
+
+
+
+
+
     }
 
     @Override
@@ -99,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.compalindetails, menu);
         return true;
     }
 
@@ -141,10 +136,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    public void onitemclick(int position) {
-        Toast.makeText(getApplicationContext(),"bro goodjob"+position+"\n"+titlearray.get(position),Toast.LENGTH_SHORT).show();
     }
 }
